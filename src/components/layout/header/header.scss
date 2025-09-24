@@ -1,0 +1,33 @@
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 50;
+	// padding-block: 24px;
+	@include adaptiveValue("padding-block", 24, 16);
+	// .header__container
+	&__container {
+		max-width: 1038px;
+		display: flex;
+		align-items: center;
+		gap: 20px;
+		@media (max-width:toEm($mobile)) {
+			justify-content: space-between;
+		}
+	}
+	// .header__logo
+	&__logo {
+		z-index: 3;
+		position: relative;
+		@media (min-width:toEm(1280)) {
+			margin-left: -120px;
+		}
+		img {
+			width: 105px;
+			aspect-ratio: 105 / 24;
+		}
+	}
+	// .header__link-logo
+	&__link-logo {}
+}

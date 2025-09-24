@@ -1,0 +1,42 @@
+.page {
+	// .page__hero
+	&__hero {}
+}
+// -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+.hero {
+	height: 100svh;
+	background-color: $bgDarkColor;
+	// .hero__container
+	&__container {
+		display: grid;
+		justify-content: center;
+	}
+	// .hero__title
+	&__title {
+		font-family: $fontDelaGothicOne;
+		font-size: 30px;
+		line-height: math.div(37, 30);
+		letter-spacing: 0.02em;
+		text-align: center;
+		color: $lightYellowColor;
+		// text-shadow: 0 4px 57px 0 rgba(255, 243, 133, 0.4);
+	}
+	// .hero__text
+	&__text {
+		justify-self: center;
+		max-width: 636px;
+		font-size: 20px;
+		letter-spacing: 0.02em;
+		text-align: center;
+		color: $lightColor;
+		line-height: math.div(30, 20);
+	}
+	// .hero__actions
+	&__actions {
+		display: flex;
+		justify-content: center;
+		gap: 23px;
+	}
+	// .hero__button
+	&__button {}
+}

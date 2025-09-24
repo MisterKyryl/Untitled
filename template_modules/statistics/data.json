@@ -1,0 +1,62 @@
+{
+  "statistics": {
+    "sessions": [
+      {
+        "date": "24.09.2025",
+        "start": 1758714691594,
+        "end": 1758714696836
+      },
+      {
+        "date": "24.09.2025",
+        "start": 1758720741949,
+        "end": 1758727119161
+      },
+      {
+        "date": "24.09.2025",
+        "start": 1758727130384,
+        "end": 1758727969667,
+        "type": "build"
+      },
+      {
+        "date": "24.09.2025",
+        "start": 1758731169815,
+        "end": 1758731169815
+      },
+      {
+        "date": "24.09.2025",
+        "start": 1758731300546,
+        "end": 1758731829003
+      },
+      {
+        "date": "24.09.2025",
+        "start": 1758732083655,
+        "end": 1758732428698
+      },
+      {
+        "date": "24.09.2025",
+        "start": 1758732744117,
+        "end": 1758735996719,
+        "type": "build"
+      }
+    ],
+    "files": [
+      "style.scss",
+      "ип.jpg",
+      "home.html",
+      "header.html",
+      "menu.html",
+      "menu.scss",
+      "logo.svg",
+      "spritemap.scss",
+      "index.html",
+      "header.scss",
+      "Не подтвержден 401973.crdownload",
+      "location.svg",
+      "quote.svg",
+      "settings.scss",
+      "button.scss",
+      "home.scss",
+      "Mask group.jpg"
+    ]
+  }
+}

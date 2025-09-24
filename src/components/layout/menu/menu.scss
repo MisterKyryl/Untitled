@@ -1,0 +1,124 @@
+.menu {
+	@media (min-width:toEm($mobile)) {
+		flex: 1 1 auto;
+	}
+	// .menu__icon
+	&__icon {}
+	// .menu__body
+	&__body {
+		@media (max-width: toEm($mobile)) {
+			position: fixed;
+			width: 100%;
+			height: 100svh;
+			right: -100%;
+			top: 0;
+			overflow: auto;
+			background-color: $bgMain;
+			padding: 70px 15px 30px 15px;
+			transition: right 0.4s;
+			&::before {
+				content: "";
+				position: fixed;
+				width: 100%;
+				height: 70px;
+				right: -100%;
+				top: 0;
+				transition: right 0.4s;
+				background-color: $bgMain;
+				z-index: 2;
+			}
+			[data-fls-menu-open] & {
+				right: 0;
+				&::before {
+					right: 0;
+				}
+			}
+		}
+	}
+	// .menu__list
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px 20px;
+		@media (max-width: toEm($mobile)) {
+			display: grid;
+			justify-content: end;
+			row-gap: 12px;
+		}
+	}
+	// .menu__item
+	&__item {
+		flex: 0 1 105px;
+		padding-block: 6px;
+		display: grid;
+		justify-content: center;
+		@media (max-width:toEm($mobile)) {
+			justify-content: end;
+		}
+	}
+	// .menu__link
+	&__link {
+		// font-family: "Apple Symbols", sans-serif;
+		font-size: 18px;
+		color: $lightYellowColor;
+		transition: color .4s;
+		@media (max-width: toEm($mobile)) {
+			font-size: 24px;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				color: $mainColor;
+			}
+		}
+	}
+}
+//Burger Icon
+.icon-menu {
+	display: none;
+	@media (max-width: toEm($mobile)) {
+		display: block;
+		position: relative;
+		width: toRem(30);
+		height: toRem(24);
+		z-index: 5;
+		@media (any-hover: none) {
+			cursor: default;
+		}
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background-color: $lightYellowColor;
+			border-radius: 2px;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - 1px);
+		}
+		[data-fls-menu-open] & {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {}
+			&::before {
+				top: calc(50% - 1px);
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - 1px);
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
