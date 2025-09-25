@@ -7,14 +7,59 @@
 		<link rel="preload" href="./assets/fonts/Avenir-Black.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<title>Home Page</title>
-		<script type="module" crossorigin="" src="./js/index.min.js?v=1758735996460"></script>
-		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1758735996460">
+		<script type="module" crossorigin="" src="./js/index.min.js?v=1758807054596"></script>
+		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1758807054596">
 		<link rel="preload" as="style" href="./css/webfonts.min.css">
 		<link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="./css/webfonts.min.css">
 	</head>
 	<body>
 		<div class="wrapper">
-			<!-- <include src="@components/layout/header/header.html" locals='{"active":"home"}'></include> -->
+			<header data-fls-header="" class="header">
+				<div class="header__container">
+					<div class="header__logo">
+						<img src="./assets/img/logo.svg" alt="Logo">
+					</div>
+					<div class="header__menu menu">
+						<button type="button" data-fls-menu="" class="menu__icon icon-menu">
+							<span></span>
+						</button>
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item">
+									<a href="#" class="menu__link">Главная</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">О нас</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">Галерея</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">События</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">Эксперты</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">Шаги</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">Контакт</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">FAQ</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<!--
+<fetch url="@components/layout/menu/menu.json">
+<each loop='item in response'>
+</each>
+</fetch>
+-->
+				</div>
+			</header>
 			<main class="page page--home">
 				<section class="page__hero hero">
 					<div class="hero__container">
@@ -30,6 +75,9 @@
 							<button data-fls-button="" type="button" class="hero__button button button--max-326">Присоединиться</button>
 							<button data-fls-button="" type="button" class="hero__button button button--max-326 button--border">Ближайшие события</button>
 						</div>
+					</div>
+					<div class="hero__background">
+						<div class="hero__circle"></div>
 					</div>
 				</section>
 			</main>
