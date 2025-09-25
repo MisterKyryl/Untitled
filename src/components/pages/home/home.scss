@@ -35,8 +35,9 @@
 	&__text {
 		flex: 1 1 auto;
 		align-self: center;
-		display: grid;
-		align-items: end;
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
 		max-width: 636px;
 		letter-spacing: 0.02em;
 		text-align: center;
