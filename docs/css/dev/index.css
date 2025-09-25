@@ -220,7 +220,7 @@ body {
   align-self: center;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: end;
   max-width: 39.75rem;
   letter-spacing: 0.02em;
   text-align: center;
