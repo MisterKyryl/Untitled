@@ -75,6 +75,7 @@
 			border-radius: 50%;
 			border: 140px solid rgba(255, 243, 133, .47);
 			filter: blur(148px);
+			-webkit-filter: blur(148px);
 		}
 		&::after {
 			content: '';
@@ -89,6 +90,5 @@
 			border: 1px solid rgba(255, 243, 133, 0.40);
 			background: radial-gradient(64.21% 64.21% at 50% 35.79%, rgba(0, 0, 0, 0.20) 38.46%, rgba(255, 249, 196, 0.20) 100%);
 		}
-
 	}
 }
