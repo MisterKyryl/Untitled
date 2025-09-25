@@ -59,15 +59,31 @@
 	// .menu__link
 	&__link {
 		// font-family: "Apple Symbols", sans-serif;
+		position: relative;
 		font-size: 18px;
 		color: $lightYellowColor;
 		transition: color .4s;
+		&::before {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 1px;
+			bottom: -4px;
+			left: 0;
+			background: $lightYellowColor;
+			opacity: 0;
+			transition: background .4s, opacity .4s;
+		}
 		@media (max-width: toEm($mobile)) {
 			font-size: 24px;
 		}
 		@media (any-hover: hover) {
 			&:hover {
 				color: $mainColor;
+				&::before {
+					opacity: 1;
+					background: $mainColor;
+				}
 			}
 		}
 	}
