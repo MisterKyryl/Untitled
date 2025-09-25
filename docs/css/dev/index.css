@@ -143,6 +143,7 @@ body {
   left: 0;
   right: 0;
   z-index: 50;
+  padding-block: 1.5rem;
 }
 .header__container {
   max-width: 64.875rem;
@@ -204,14 +205,10 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 3.625rem;
   min-height: 100svh;
-  padding-top: 9rem;
-  padding-bottom: 7rem;
 }
 .hero__title {
   font-family: "Dela Gothic One", sans-serif;
-  font-size: 1.875rem;
   line-height: 1.2333333333;
   letter-spacing: 0.02em;
   text-align: center;
@@ -224,7 +221,6 @@ body {
   display: grid;
   align-items: end;
   max-width: 39.75rem;
-  font-size: 1.25rem;
   letter-spacing: 0.02em;
   text-align: center;
   color: #FFF;
@@ -237,8 +233,16 @@ body {
   display: flex;
   justify-content: center;
   gap: 1.4375rem;
+  flex-wrap: wrap;
 }
 .hero__background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.hero__circle {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -256,6 +260,7 @@ body {
   border-radius: 50%;
   border: 8.75rem solid rgba(255, 243, 133, 0.47);
   filter: blur(9.25rem);
+  -ms-filter: blur(9.25rem);
   -webkit-filter: blur(9.25rem);
 }
 .hero__circle::after {
@@ -263,13 +268,27 @@ body {
   position: absolute;
   width: 116.33%;
   height: 155.07%;
-  aspect-ratio: 1;
   top: 44.6%;
   left: 50%;
   translate: -50% 0;
   border-radius: 50%;
   border: 0.0625rem solid rgba(255, 243, 133, 0.4);
   background: radial-gradient(64.21% 64.21% at 50% 35.79%, rgba(0, 0, 0, 0.2) 38.46%, rgba(255, 249, 196, 0.2) 100%);
+}
+@media (max-width: 61.99875em) {
+  .hero__title {
+    line-height: 1.4;
+  }
+  .hero__circle::before {
+    aspect-ratio: 1;
+    width: auto;
+    top: 50%;
+  }
+  .hero__circle::after {
+    aspect-ratio: 1;
+    width: auto;
+    top: 50%;
+  }
 }
 @media (max-width: 47.99875em) and (any-hover: none) {
   .icon-menu {
@@ -285,14 +304,14 @@ body {
     top: 0;
     overflow: auto;
     background-color: #0C0C0C;
-    padding: 4.375rem 0.9375rem 1.875rem 0.9375rem;
+    padding: 5.5rem 0.9375rem 1.875rem 0.9375rem;
     transition: right 0.4s;
   }
   .menu__body::before {
     content: "";
     position: fixed;
     width: 100%;
-    height: 4.375rem;
+    height: 4.5rem;
     right: -100%;
     top: 0;
     transition: right 0.4s;
@@ -357,14 +376,43 @@ body {
     justify-content: space-between;
   }
 }
+@media (max-width: 29.99875em) {
+  .hero__button {
+    max-width: none;
+  }
+}
 @media (max-width: 20em) {
-  .header {
-    padding-block: 1rem;
+  .hero__container {
+    padding-top: 6.25rem;
+  }
+  .hero__container {
+    padding-bottom: 3.75rem;
+  }
+  .hero__container {
+    gap: 2rem;
+  }
+  .hero__title {
+    font-size: 1.5rem;
+  }
+  .hero__text {
+    font-size: 1.125rem;
   }
 }
 @media (min-width: 20em) and (max-width: 65.625em) {
-  .header {
-    padding-block: clamp( 1rem , 0.78082191780625rem  +  1.095890411vw , 1.5rem );
+  .hero__container {
+    padding-top: clamp( 6.25rem , 5.04452054794375rem  +  6.0273972603vw , 9rem );
+  }
+  .hero__container {
+    padding-bottom: clamp( 3.75rem , 2.32534246575625rem  +  7.1232876712vw , 7rem );
+  }
+  .hero__container {
+    gap: clamp( 2rem , 1.50684931506875rem  +  2.4657534247vw , 3.125rem );
+  }
+  .hero__title {
+    font-size: clamp( 1.5rem , 1.33561643835625rem  +  0.8219178082vw , 1.875rem );
+  }
+  .hero__text {
+    font-size: clamp( 1.125rem , 1.07020547945rem  +  0.2739726027vw , 1.25rem );
   }
 }
 @media (min-width: 47.99875em) {
@@ -373,8 +421,20 @@ body {
   }
 }
 @media (min-width: 65.625em) {
-  .header {
-    padding-block: 1.5rem;
+  .hero__container {
+    padding-top: 9rem;
+  }
+  .hero__container {
+    padding-bottom: 7rem;
+  }
+  .hero__container {
+    gap: 3.125rem;
+  }
+  .hero__title {
+    font-size: 1.875rem;
+  }
+  .hero__text {
+    font-size: 1.25rem;
   }
 }
 @media (min-width: 80em) {
