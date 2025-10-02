@@ -24,24 +24,29 @@ import "./slider.scss";
 
 // Ініціалізація слайдерів
 function initSliders() {
+	function clearActiveSlideStyles(swiper) {
+		const activeSlide = swiper.slides[swiper.activeIndex];
+		if (activeSlide) activeSlide.removeAttribute('style');
+	}
 	// Список слайдерів
 	// Перевіряємо, чи є слайдер на сторінці
-	if (document.querySelector('.swiper')) { // <- Вказуємо склас потрібного слайдера
+	if (document.querySelector('.gallery__slider')) { // <- Вказуємо склас потрібного слайдера
 		// Створюємо слайдер
-		new Swiper('.swiper', { // <- Вказуємо склас потрібного слайдера
+		new Swiper('.gallery__slider', { // <- Вказуємо склас потрібного слайдера
 			// Підключаємо модулі слайдера
 			// для конкретного випадку
 			modules: [Navigation],
 			observer: true,
 			observeParents: true,
-			slidesPerView: 1,
+			slidesPerView: 2.63,
 			spaceBetween: 0,
 			//autoHeight: true,
 			speed: 800,
+			initialSlide: 1,
+			loop: true,
 
 			//touchRatio: 0,
 			//simulateTouch: false,
-			//loop: true,
 			//preloadImages: false,
 			//lazy: true,
 
@@ -99,7 +104,12 @@ function initSliders() {
 			*/
 			// Події
 			on: {
-
+				init: function () {
+					clearActiveSlideStyles(this);
+				},
+				slideChangeTransitionEnd: function () {
+					clearActiveSlideStyles(this);
+				}
 			}
 		});
 	}

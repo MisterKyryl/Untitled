@@ -9,16 +9,21 @@ textarea {
 	appearance: none;
 }
 .input {
-	border-radius: 0 !important;
 	width: 100%;
 	display: block;
-	padding: 10px;
-	border: 1px solid #eee;
-	caret-color: inherit;
-	&.--form-focus {
+	border-radius: 46px;
+	padding: 15px 12px;
+	border: 1px solid $lightYellowColor;
+	background: #000;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: math.div(25, 18);
+	color: $lightYellowColor;
+	&::placeholder {
+		color: $lightYellowColor;
 	}
-	&.--form-error {
-	}
+	&.--form-focus {}
+	&.--form-error {}
 }
 .input[placeholder]:not([data-fls-placeholder-nohiden]) {
 	&::placeholder {

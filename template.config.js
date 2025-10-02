@@ -49,7 +49,7 @@ export default {
 	},
 	fonts: {
 		iconsfont: false,
-		download: true
+		download: false
 	},
 	images: {
 		svgsprite: true,

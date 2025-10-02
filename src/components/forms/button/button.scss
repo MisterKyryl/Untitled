@@ -13,7 +13,7 @@
 	border-radius: 49px;
 	padding: 12px 24px;
 	border: 1px solid transparent;
-	transition: all .4s;
+	transition: color .4s, background .4s;
 	@media (any-hover: hover) {
 		&:hover {
 			color: $lightYellowColor;
@@ -33,6 +33,10 @@
 	}
 	&--max-167 {
 		max-width: 167px;
+		width: 100%;
+	}
+	&--max-252 {
+		max-width: 252px;
 		width: 100%;
 	}
 	&--max-326 {
