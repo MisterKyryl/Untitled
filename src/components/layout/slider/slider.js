@@ -24,10 +24,6 @@ import "./slider.scss";
 
 // Ініціалізація слайдерів
 function initSliders() {
-	function clearActiveSlideStyles(swiper) {
-		const activeSlide = swiper.slides[swiper.activeIndex];
-		if (activeSlide) activeSlide.removeAttribute('style');
-	}
 	// Список слайдерів
 	// Перевіряємо, чи є слайдер на сторінці
 	if (document.querySelector('.gallery__slider')) { // <- Вказуємо склас потрібного слайдера
@@ -38,7 +34,7 @@ function initSliders() {
 			modules: [Navigation],
 			observer: true,
 			observeParents: true,
-			slidesPerView: 2.63,
+			slidesPerView: 1,
 			spaceBetween: 0,
 			//autoHeight: true,
 			speed: 800,
@@ -77,39 +73,23 @@ function initSliders() {
 
 			// Кнопки "вліво/вправо"
 			navigation: {
-				prevEl: '.swiper-button-prev',
-				nextEl: '.swiper-button-next',
+				prevEl: '.slider-gallery__button-prev',
+				nextEl: '.slider-gallery__button-next',
 			},
-			/*
 			// Брейкпоінти
 			breakpoints: {
+				480: {
+					slidesPerView: 1.5,
+				},
 				640: {
-					slidesPerView: 1,
-					spaceBetween: 0,
-					autoHeight: true,
+					slidesPerView: 2,
 				},
 				768: {
-					slidesPerView: 2,
-					spaceBetween: 20,
-				},
-				992: {
-					slidesPerView: 3,
-					spaceBetween: 20,
-				},
-				1268: {
-					slidesPerView: 4,
-					spaceBetween: 30,
+					slidesPerView: 2.63,
 				},
 			},
-			*/
 			// Події
 			on: {
-				init: function () {
-					clearActiveSlideStyles(this);
-				},
-				slideChangeTransitionEnd: function () {
-					clearActiveSlideStyles(this);
-				}
 			}
 		});
 	}

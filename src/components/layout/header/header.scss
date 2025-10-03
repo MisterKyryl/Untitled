@@ -4,8 +4,11 @@
 	left: 0;
 	right: 0;
 	z-index: 50;
-	padding-block: 24px;
-	// @include adaptiveValue("padding-block", 24, 16);
+	@include adaptiveValue("padding-block", 24, 16);
+	transition: all .4s;
+	&--active {
+		background: $bgMain;
+	}
 	// .header__container
 	&__container {
 		max-width: 1038px;

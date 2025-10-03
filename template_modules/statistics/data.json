@@ -123,6 +123,22 @@
         "start": 1759434356984,
         "end": 1759436100482,
         "type": "build"
+      },
+      {
+        "date": "03.10.2025",
+        "start": 1759476271992,
+        "end": 1759477725049
+      },
+      {
+        "date": "03.10.2025",
+        "start": 1759477733095,
+        "end": 1759482244403
+      },
+      {
+        "date": "03.10.2025",
+        "start": 1759482251715,
+        "end": 1759484695869,
+        "type": "build"
       }
     ],
     "files": [
@@ -162,7 +178,9 @@
       "wha.svg",
       "instsvg.svg",
       "ins.svg",
-      "bg-circle.png"
+      "bg-circle.png",
+      "app.js",
+      "arrow-slider.svg"
     ]
   }
 }

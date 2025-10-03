@@ -1,5 +1,5 @@
 .swiper {
-	// overflow: hidden;
+	overflow: hidden;
 }
 .swiper-initialized {
 	touch-action: pan-y;
@@ -36,3 +36,39 @@
 .swiper-button-lock {
 	display: none !important;
 }
+.swiper-navigation-icon {
+	display: none !important;
+}
+// -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+.swiper-button-prev,
+.swiper-button-next {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 46px;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	border: 1px solid $lightYellowColor;
+	transition: border .3s;
+	svg {
+		width: 9px;
+		height: 12px;
+		fill: $lightYellowColor;
+		transition: fill .3s;
+	}
+	@media (any-hover: hover){
+		&:hover{
+			border: 1px solid $mainColor;
+			svg {
+				fill: $mainColor;
+			}
+		}
+
+	}
+}
+.swiper-button-prev {
+	svg {
+		rotate: -180deg;
+	}
+}
+.swiper-button-next {}
