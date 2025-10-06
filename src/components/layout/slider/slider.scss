@@ -56,14 +56,23 @@
 		fill: $lightYellowColor;
 		transition: fill .3s;
 	}
-	@media (any-hover: hover){
-		&:hover{
+	@media (any-hover: hover) {
+		&:hover {
 			border: 1px solid $mainColor;
 			svg {
 				fill: $mainColor;
 			}
 		}
-
+	}
+	&.swiper-button-yellow {
+		svg {
+			fill: $darkColor;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background: $mainColor;
+			}
+		}
 	}
 }
 .swiper-button-prev {
@@ -72,3 +81,7 @@
 	}
 }
 .swiper-button-next {}
+.swiper-button-yellow {
+	transition: background .3s;
+	background: $lightYellowColor;
+}
