@@ -248,7 +248,15 @@
 .gallery {
 	@include adaptiveValue("padding-top", 95, 60);
 	// .gallery__container
-	&__container {}
+	&__container {
+		>* {
+			@media (min-width:toEm($mobile)) {
+				&:not(:last-child) {
+					@include adaptiveValue("margin-bottom", 48, 20);
+				}
+			}
+		}
+	}
 	// .gallery__title
 	&__title {
 		&:not(:last-child) {

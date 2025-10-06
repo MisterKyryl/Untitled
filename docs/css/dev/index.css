@@ -1820,6 +1820,24 @@ textarea.input {
   }
 }
 
+@media (min-width: 47.99875em) and (min-width: 65.625em){
+  .gallery__container > *:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
+
+@media (min-width: 47.99875em) and (min-width: 20em) and (max-width: 65.625em){
+  .gallery__container > *:not(:last-child) {
+    margin-bottom: clamp( 1.25rem , 0.48287671233125rem  +  3.8356164384vw , 3rem );
+  }
+}
+
+@media (min-width: 47.99875em) and (max-width: 20em){
+  .gallery__container > *:not(:last-child) {
+    margin-bottom: 1.25rem;
+  }
+}
+
 @media (min-width: 47.99875em){
   .menu {
     flex: 1 1 auto;
