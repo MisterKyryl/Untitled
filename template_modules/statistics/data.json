@@ -172,6 +172,18 @@
         "start": 1759771170499,
         "end": 1759771324182,
         "type": "build"
+      },
+      {
+        "date": "06.10.2025",
+        "start": 1759771369862,
+        "end": 1759771875447,
+        "type": "build"
+      },
+      {
+        "date": "06.10.2025",
+        "start": 1759771891359,
+        "end": 1759772107368,
+        "type": "build"
       }
     ],
     "files": [
@@ -213,7 +225,8 @@
       "ins.svg",
       "bg-circle.png",
       "app.js",
-      "arrow-slider.svg"
+      "arrow-slider.svg",
+      "footer.html"
     ]
   }
 }

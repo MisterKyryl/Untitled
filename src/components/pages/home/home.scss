@@ -248,13 +248,7 @@
 .gallery {
 	@include adaptiveValue("padding-top", 95, 60);
 	// .gallery__container
-	&__container {
-		>* {
-			&:not(:last-child) {
-				@include adaptiveValue("margin-bottom", 48, 20);
-			}
-		}
-	}
+	&__container {}
 	// .gallery__title
 	&__title {
 		&:not(:last-child) {
@@ -868,7 +862,7 @@
 	&__slider {}
 }
 .slider-reviews {
-	@media (max-width:toEm($tablet)){
+	@media (max-width:toEm($tablet)) {
 		margin: 0 -15px;
 		padding: 0 15px;
 	}

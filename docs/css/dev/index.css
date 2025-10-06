@@ -1479,9 +1479,6 @@ textarea.input {
   .gallery {
     padding-top: 3.75rem;
   }
-  .gallery__container > *:not(:last-child) {
-    margin-bottom: 1.25rem;
-  }
   .gallery__title:not(:last-child) {
     margin-bottom: 2rem;
   }
@@ -1676,9 +1673,6 @@ textarea.input {
   }
   .gallery {
     padding-top: clamp( 3.75rem , 2.7910958904125rem  +  4.7945205479vw , 5.9375rem );
-  }
-  .gallery__container > *:not(:last-child) {
-    margin-bottom: clamp( 1.25rem , 0.48287671233125rem  +  3.8356164384vw , 3rem );
   }
   .gallery__title:not(:last-child) {
     margin-bottom: clamp( 2rem , 1.09589041095625rem  +  4.5205479452vw , 4.0625rem );
@@ -1963,9 +1957,6 @@ textarea.input {
   }
   .gallery {
     padding-top: 5.9375rem;
-  }
-  .gallery__container > *:not(:last-child) {
-    margin-bottom: 3rem;
   }
   .gallery__title:not(:last-child) {
     margin-bottom: 4.0625rem;
