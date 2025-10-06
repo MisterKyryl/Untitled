@@ -190,6 +190,12 @@
         "start": 1759772171148,
         "end": 1759772259270,
         "type": "build"
+      },
+      {
+        "date": "06.10.2025",
+        "start": 1759772536908,
+        "end": 1759774371326,
+        "type": "build"
       }
     ],
     "files": [
@@ -232,7 +238,8 @@
       "bg-circle.png",
       "app.js",
       "arrow-slider.svg",
-      "footer.html"
+      "footer.html",
+      "footer.scss"
     ]
   }
 }
