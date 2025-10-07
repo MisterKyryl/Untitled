@@ -67,13 +67,12 @@
 		&::before {
 			content: '';
 			position: absolute	;	
-			width: 100%;
+			width: 0;
 			height: 1px;
 			bottom: -4px;
-			left: 0;
+			left: 50%;
 			background: $lightYellowColor;
-			opacity: 0;
-			transition: background .4s, opacity .4s;
+			transition: background .4s, left .4s, width .4s;
 		}
 		@media (max-width: toEm($mobile)) {
 			font-size: 24px;
@@ -82,7 +81,8 @@
 			&:hover {
 				color: $mainColor;
 				&::before {
-					opacity: 1;
+					width: 100%;
+					left: 0%;
 					background: $mainColor;
 				}
 			}

@@ -80,6 +80,9 @@
 	@media (any-hover: hover) {
 		&:hover {
 			background: $mainColor;
+			svg {
+				fill: $darkColor;
+			}
 		}
 	}
 }

@@ -33,7 +33,14 @@
 		}
 	}
 	// .footer__link-logo
-	&__link-logo {}
+	&__link-logo {
+		transition: opacity .4s;
+		@media (any-hover: hover){
+			&:hover{
+				opacity: .6;
+			}
+		}
+	}
 	// .footer__link-phone
 	&__link-phone {
 		font-family: $fontChonburi;

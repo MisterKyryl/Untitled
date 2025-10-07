@@ -3,18 +3,18 @@
 	<nav class="menu__body">
 		<ul class="menu__list">
 			<each loop='item in [
-					{"href": "#hero","ancor": "Главная"},
-					{"href": "#about","ancor": "О нас"},
-					{"href": "#gallery","ancor": "Галерея"},
-					{"href": "#events","ancor": "События"},
-					{"href": "#experts","ancor": "Эксперты"},
-					{"href": "#steps","ancor": "Шаги"},
-					{"href": "#contact","ancor": "Контакт"},
-					{"href": "#faq","ancor": "FAQ"}
+					{"scrollto": "#hero", "href": "index.html#hero","ancor": "Главная"},
+					{"scrollto": "#about", "href": "index.html#about","ancor": "О нас"},
+					{"scrollto": "#gallery", "href": "index.html#gallery","ancor": "Галерея"},
+					{"scrollto": "#events", "href": "index.html#events","ancor": "События"},
+					{"scrollto": "#experts", "href": "index.html#experts","ancor": "Эксперты"},
+					{"scrollto": "#steps", "href": "index.html#steps","ancor": "Шаги"},
+					{"scrollto": "#contact", "href": "index.html#contact","ancor": "Контакт"},
+					{"scrollto": "#faq", "href": "index.html#faq","ancor": "FAQ"}
 				]'>
 				<if condition="'[[active]]' === 'home'">
 					<li class="menu__item">
-						<a data-fls-scrollto-header data-fls-scrollto="[[item.href]]" class="menu__link">[[item.ancor]]</a>
+						<a data-fls-scrollto-header data-fls-scrollto="[[item.scrollto]]" class="menu__link">[[item.ancor]]</a>
 					</li>
 				</if>
 				<else>
