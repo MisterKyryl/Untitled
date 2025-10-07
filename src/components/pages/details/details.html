@@ -1,6 +1,63 @@
- <script type="module" src="@components/pages/details/details.js"></script>
+<script type="module" src="@components/pages/details/details.js"></script>
 <link rel="stylesheet" href="@components/pages/details/details.scss">
 
 <main class="page page--details">
-	
+	<div class="page__details details">
+		<div class="details__container">
+			<div class="details__date">20 October, 2026 </div>
+			<div class="details__location">
+				<svg>
+					<use xlink:href="__spritemap#sprite-location"></use>
+				</svg>
+				<div class="details__text-location">Munchen, Concert Hall</div>
+			</div>
+		</div>
+		<div class="details__background">
+			<img src="@img/details/details/bg.png" alt="Image">
+		</div>
+	</div>
+	<section class="page__additional additional">
+		<div class="additional__container">
+			<h2 class="additional__title title title--center title--fw-600 title--uppercase">ADDITIONAL INFO</h2>
+			<div class="additional__text">
+				<p>
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
+					since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only
+					five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+					the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
+					including versions of Lorem Ipsum.
+				</p>
+				<p>
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
+					since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only
+					five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+					the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
+					including versions of Lorem Ipsum.
+				</p>
+			</div>
+			<div class="additional__socials">
+				<div class="additional__item">
+					<a href="#" class="additional__link">
+						<svg>
+							<use xlink:href="__spritemap#sprite-fb"></use>
+						</svg>
+					</a>
+				</div>
+				<div class="additional__item">
+					<a href="#" class="additional__link">
+						<svg>
+							<use xlink:href="__spritemap#sprite-wha"></use>
+						</svg>
+					</a>
+				</div>
+				<div class="additional__item">
+					<a href="#" class="additional__link">
+						<svg>
+							<use xlink:href="__spritemap#sprite-inst"></use>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
 </main>
