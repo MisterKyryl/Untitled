@@ -7,8 +7,8 @@
 		<link rel="preload" href="./assets/fonts/Avenir-Black.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<title>Home Page</title>
-		<script type="module" crossorigin="" src="./js/index.min.js?v=1759774371281"></script>
-		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1759774371281">
+		<script type="module" crossorigin="" src="./js/index.min.js?v=1759859958185"></script>
+		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1759859958185">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -24,28 +24,28 @@
 						<nav class="menu__body">
 							<ul class="menu__list">
 								<li class="menu__item">
-									<a href="#" class="menu__link">Главная</a>
+									<a data-fls-scrollto-header="" data-fls-scrollto="#hero" class="menu__link">Главная</a>
 								</li>
 								<li class="menu__item">
-									<a href="#" class="menu__link">О нас</a>
+									<a data-fls-scrollto-header="" data-fls-scrollto="#about" class="menu__link">О нас</a>
 								</li>
 								<li class="menu__item">
-									<a href="#" class="menu__link">Галерея</a>
+									<a data-fls-scrollto-header="" data-fls-scrollto="#gallery" class="menu__link">Галерея</a>
 								</li>
 								<li class="menu__item">
-									<a href="#" class="menu__link">События</a>
+									<a data-fls-scrollto-header="" data-fls-scrollto="#events" class="menu__link">События</a>
 								</li>
 								<li class="menu__item">
-									<a href="#" class="menu__link">Эксперты</a>
+									<a data-fls-scrollto-header="" data-fls-scrollto="#experts" class="menu__link">Эксперты</a>
 								</li>
 								<li class="menu__item">
-									<a href="#" class="menu__link">Шаги</a>
+									<a data-fls-scrollto-header="" data-fls-scrollto="#steps" class="menu__link">Шаги</a>
 								</li>
 								<li class="menu__item">
-									<a href="#" class="menu__link">Контакт</a>
+									<a data-fls-scrollto-header="" data-fls-scrollto="#contact" class="menu__link">Контакт</a>
 								</li>
 								<li class="menu__item">
-									<a href="#" class="menu__link">FAQ</a>
+									<a data-fls-scrollto-header="" data-fls-scrollto="#faq" class="menu__link">FAQ</a>
 								</li>
 							</ul>
 						</nav>
@@ -59,7 +59,7 @@
 				</div>
 			</header>
 			<main class="page page--home">
-				<section class="page__hero hero">
+				<section id="hero" class="page__hero hero">
 					<div class="hero__container">
 						<h1 class="hero__title">
 							Мы объединяем предпринимателей в Германии — здесь ваши идеи превращаются в рост и сильные партнёрства
@@ -78,7 +78,7 @@
 						<div class="hero__circle"></div>
 					</div>
 				</section>
-				<section class="page__about about">
+				<section id="about" class="page__about about">
 					<div class="about__container">
 						<h2 class="about__title title">Мы начали с нуля, чтобы помочь другим расти</h2>
 						<div class="about__text text">
@@ -135,7 +135,7 @@
 						<img class="about__picture" alt="Image" src="./assets/img/home/about/01.webp">
 					</div>
 				</section>
-				<section class="page__gallery gallery">
+				<section id="gallery" class="page__gallery gallery">
 					<div class="gallery__container">
 						<h2 class="gallery__title title title--center">Мы усиливаем сильных</h2>
 						<div class="gallery__content">
@@ -241,7 +241,7 @@
 						</div>
 					</div>
 				</section>
-				<section class="page__events events">
+				<section id="events" class="page__events events">
 					<div class="events__container">
 						<h2 class="events__title title title--center">Ближайшие события</h2>
 						<div class="events__body">
@@ -327,7 +327,7 @@
 						</div>
 					</div>
 				</section>
-				<section class="page__steps steps">
+				<section id="steps" class="page__steps steps">
 					<div class="steps__container">
 						<h2 class="steps__title title title--center title--uppercase title--fw-600">Учиться у лучших — значит расти быстрее</h2>
 						<div class="steps__text">
@@ -370,7 +370,7 @@
 						</div>
 					</div>
 				</section>
-				<div class="page__experts experts">
+				<div id="experts" class="page__experts experts">
 					<div class="experts__container">
 						<h2 class="experts__title title title--center title--fw-600">Хотите расти вместе с лучшими?</h2>
 						<div class="experts__body">
@@ -421,7 +421,7 @@
 						<img alt="Image" src="./assets/img/bg-circle.webp">
 					</div>
 				</div>
-				<div class="page__reviews reviews">
+				<div id="reviews" class="page__reviews reviews">
 					<div class="reviews__container">
 						<h2 class="reviews__title title title--center title--fw-600">Истории и энергия наших событий</h2>
 						<div data-fls-slider="" class="reviews__slider slider-reviews swiper">
@@ -514,7 +514,7 @@
 						</div>
 					</div>
 				</div>
-				<section class="page__contact contact">
+				<section id="contact" class="page__contact contact">
 					<div class="contact__container">
 						<h2 class="contact__title title title--right title--fw-600">Ваш рост начинается здесь</h2>
 						<div class="contact__text">
@@ -568,7 +568,7 @@
 						</div>
 					</div>
 				</section>
-				<div class="page__faq faq">
+				<div id="faq" class="page__faq faq">
 					<div class="faq__container">
 						<h2 class="faq__title title title--center title--uppercase">FAQ</h2>
 						<dl class="faq__body">
