@@ -120,6 +120,7 @@
   max-width: 77.875rem;
 }
 .slider-person__slide {
+  pointer-events: all;
   cursor: grab;
 }
 .slider-person__actions {
@@ -128,6 +129,7 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  pointer-events: all;
 }
 .slide-person__image img {
   object-fit: cover;
@@ -290,6 +292,9 @@
 @media (min-width: 61.99875em) {
   .body-details {
     width: 50.98%;
+  }
+  .person {
+    pointer-events: none;
   }
   .person__container {
     display: grid;

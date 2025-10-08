@@ -179,6 +179,9 @@
 .person {
 	z-index: 3;
 	position: relative;
+	@media (min-width:toEm($tablet)) {
+		pointer-events: none;
+	}
 	// .person__container
 	&__container {
 		max-width: 1246px;
@@ -202,6 +205,7 @@
 	&__wrapper {}
 	// .slider-person__slide
 	&__slide {
+		pointer-events: all;
 		cursor: grab;
 	}
 	// .slider-person__actions
@@ -211,6 +215,7 @@
 		align-items: center;
 		justify-content: center;
 		gap: 16px;
+		pointer-events: all;
 	}
 	// .slider-person__button-prev
 	&__button-prev {}
