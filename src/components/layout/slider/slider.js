@@ -162,6 +162,70 @@ function initSliders() {
 			}
 		});
 	}
+	if (document.querySelector('.person__slider')) { // <- Вказуємо склас потрібного слайдера
+		// Створюємо слайдер
+		new Swiper('.person__slider', { // <- Вказуємо склас потрібного слайдера
+			// Підключаємо модулі слайдера
+			// для конкретного випадку
+			modules: [Navigation],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 2,
+			spaceBetween: 0,
+			autoHeight: true,
+			speed: 800,
+			loop: true,
+
+			//touchRatio: 0,
+			//simulateTouch: false,
+			//preloadImages: false,
+			//lazy: true,
+
+			/*
+			// Ефекти
+			effect: 'fade',
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+			*/
+
+			// Пагінація
+			/*
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+			*/
+
+			// Скроллбар
+			/*
+			scrollbar: {
+				el: '.swiper-scrollbar',
+				draggable: true,
+			},
+			*/
+
+			// Кнопки "вліво/вправо"
+			navigation: {
+				prevEl: '.slider-person__button-prev',
+				nextEl: '.slider-person__button-next',
+			},
+
+			// Брейкпоінти
+			breakpoints: {
+				480: {
+					slidesPerView: 3,
+				},
+				640: {
+					slidesPerView: 4,
+				}
+			},
+			// Події
+			on: {
+			}
+		});
+	}
 }
 document.querySelector('[data-fls-slider]') ?
 	window.addEventListener("load", initSliders) : null

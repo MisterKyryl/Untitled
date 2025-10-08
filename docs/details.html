@@ -7,9 +7,10 @@
 		<link rel="preload" href="./assets/fonts/Avenir-Black.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<title>Details Page</title>
-		<script type="module" crossorigin="" src="./js/app.min.js?v=1759870816224"></script>
-		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1759870816224">
-		<link rel="stylesheet" crossorigin="" href="./css/details.min.css?v=1759870816224">
+		<script type="module" crossorigin="" src="./js/details.min.js?v=1759948724256"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/app.min.js">
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1759948724256">
+		<link rel="stylesheet" crossorigin="" href="./css/details.min.css?v=1759948724256">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -61,7 +62,7 @@
 			</header>
 			<main class="page page--details">
 				<div class="page__details details">
-					<div class="details__container">
+					<div class="details__container-big">
 						<div class="details__date">20 October, 2026</div>
 						<div class="details__location">
 							<svg>
@@ -70,8 +71,91 @@
 							<div class="details__text-location">Munchen, Concert Hall</div>
 						</div>
 					</div>
+					<div class="details__container">
+						<div data-fls-dynamic=".person__container, 991.98, 0" class="details__body body-details">
+							<div class="body-details__name">Майкл Бэнг</div>
+							<div class="body-details__content">
+								<ul class="body-details__list">
+									<li class="body-details__item">Dollar Millionaire</li>
+									<li class="body-details__item">Blogger, 1 million subscribers in social networks</li>
+									<li class="body-details__item">
+										15 years of research into finance, helps people multiply their income with the help of their financial system
+									</li>
+									<li class="body-details__item">
+										In 2009, he founded the Millionaires Club, opened 77 branches of the Club in 7 countries of the world
+									</li>
+									<li class="body-details__item">
+										Trained more than 15,000 participants in the Millionaires Club
+										<br>
+										Author of 8 best-selling books on financial literacy
+									</li>
+								</ul>
+								<button type="button" data-fls-button="" class="body-details__button button button--max-167">Contact</button>
+							</div>
+						</div>
+					</div>
 					<div class="details__background">
 						<img alt="Image" src="./assets/img/details/details/bg.webp">
+					</div>
+				</div>
+				<div class="page__person person">
+					<div class="person__container">
+						<div data-fls-slider="" class="person__slider slider-person swiper">
+							<div class="slider-person__wrapper swiper-wrapper">
+								<div class="slider-person__slide slide-person swiper-slide">
+									<div class="slide-person__image">
+										<img alt="Image" src="./assets/img/home/gallery/04.webp">
+									</div>
+								</div>
+								<div class="slider-person__slide slide-person swiper-slide">
+									<div class="slide-person__image">
+										<img alt="Image" src="./assets/img/home/gallery/01.webp">
+									</div>
+								</div>
+								<div class="slider-person__slide slide-person swiper-slide">
+									<div class="slide-person__image">
+										<img alt="Image" src="./assets/img/home/gallery/02.webp">
+									</div>
+								</div>
+								<div class="slider-person__slide slide-person swiper-slide">
+									<div class="slide-person__image">
+										<img alt="Image" src="./assets/img/home/gallery/03.webp">
+									</div>
+								</div>
+								<div class="slider-person__slide slide-person swiper-slide">
+									<div class="slide-person__image">
+										<img alt="Image" src="./assets/img/home/gallery/04.webp">
+									</div>
+								</div>
+								<div class="slider-person__slide slide-person swiper-slide">
+									<div class="slide-person__image">
+										<img alt="Image" src="./assets/img/home/gallery/01.webp">
+									</div>
+								</div>
+								<div class="slider-person__slide slide-person swiper-slide">
+									<div class="slide-person__image">
+										<img alt="Image" src="./assets/img/home/gallery/02.webp">
+									</div>
+								</div>
+								<div class="slider-person__slide slide-person swiper-slide">
+									<div class="slide-person__image">
+										<img alt="Image" src="./assets/img/home/gallery/03.webp">
+									</div>
+								</div>
+							</div>
+							<div class="slider-person__actions">
+								<button type="button" class="swiper-button-prev slider-person__button-prev">
+									<svg>
+										<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-slider"></use>
+									</svg>
+								</button>
+								<button type="button" class="swiper-button-next slider-person__button-next">
+									<svg>
+										<use xlink:href="./assets/img/spritemap.svg#sprite-arrow-slider"></use>
+									</svg>
+								</button>
+							</div>
+						</div>
 					</div>
 				</div>
 				<section class="page__additional additional">

@@ -2,19 +2,24 @@
 .page {
 	// .page__details
 	&__details {}
+	// .page__person
+	&__person {}
 	// .page__additional
 	&__additional {}
 }
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
 .details {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
 	position: relative;
 	margin-top: 110px;
-	min-height: 100vh;
+	min-height: 85vh;
 	@media (max-width:toEm($mobile)) {
 		@include adaptiveValue("margin-top", 67, 56, 0, $mobile, 320);
 	}
-	// .details__container
-	&__container {
+	// .details__container-big
+	&__container-big {
 		z-index: 3;
 		position: relative;
 		display: flex;
@@ -23,11 +28,27 @@
 		gap: 10px 24px;
 		flex-wrap: wrap;
 		max-width: none;
+		margin: 0;
 		padding-inline: 30px;
 		padding-top: 12px;
 		@media (max-width:toEm($mobileSmall)) {
 			align-items: end;
 			flex-direction: column;
+		}
+	}
+	// .details__container
+	&__container {
+		flex: 1 1 auto;
+		align-content: end;
+		max-width: 1246px;
+		width: 100%;
+		z-index: 3;
+		position: relative;
+		@media (min-width:toEm($tablet)) {
+			@include adaptiveValue("margin-bottom", -201, -155, 0, 1246, $tablet);
+		}
+		@media (max-width:toEm($tablet)) {
+			display: none;
 		}
 	}
 	// .details__date
@@ -78,6 +99,130 @@
 			top: 0;
 			left: 0;
 			background: rgba(0, 0, 0, .2);
+			@media (max-width:toEm($mobileSmall)) {
+				background: rgba(0, 0, 0, .6);
+			}
+		}
+	}
+}
+.body-details {
+	@media (max-width:toEm($tablet)) {
+		margin-top: -200px;
+		max-width: 620px;
+		&:not(:last-child) {
+			margin-bottom: 60px;
+		}
+	}
+	@media (min-width:toEm($tablet)) {
+		width: 50.98%;
+	}
+	>* {
+		&:not(:last-child) {
+			margin-bottom: 30px;
+		}
+	}
+	// .body-details__name
+	&__name {
+		font-family: $fontUnbounded;
+		text-align: center;
+		color: $lightYellowColor;
+		@include adaptiveValue("font-size", 30, 20);
+	}
+	// .body-details__content
+	&__content {
+		position: relative;
+		border: 1px solid $lightYellowColor;
+		border-radius: 46px;
+		background: $darkColor;
+		padding-right: 28px;
+		@include adaptiveValue("padding-top", 48, 28, 0, 1246, $tablet);
+		@include adaptiveValue("padding-left", 60, 28, 0, 1246, $tablet);
+		@include adaptiveValue("padding-bottom", 88, 48, 0, 1246, $tablet);
+		@media (max-width:toEm($mobile)) {
+			padding-inline: 16px;
+		}
+	}
+	// .body-details__list
+	&__list {
+		>* {
+			&:not(:last-child) {
+				margin-bottom: 27px;
+			}
+		}
+	}
+	// .body-details__item
+	&__item {
+		position: relative;
+		color: $lightYellowColor;
+		line-height: math.div(27, 20);
+		@include adaptiveValue("padding-left", 40, 30);
+		@include adaptiveValue("font-size", 20, 16);
+		&::before {
+			content: '';
+			position: absolute;
+			top: 2px;
+			left: 0;
+			aspect-ratio: 25/23;
+			@include sprite('stars');
+			@include adaptiveValue("width", 25, 20);
+		}
+	}
+	// .body-details__button
+	&__button {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		translate: -50% 50%;
+	}
+}
+// -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+.person {
+	z-index: 3;
+	position: relative;
+	// .person__container
+	&__container {
+		max-width: 1246px;
+		@media (min-width:toEm($tablet)) {
+			display: grid;
+			justify-content: end;
+			grid-template-columns: 47.283%;
+		}
+	}
+	// .person__body
+	&__body {}
+	// .person__slider
+	&__slider {}
+}
+.slider-person {
+	@media (max-width:toEm($tablet)) {
+		margin-inline: -15px;
+		padding-inline: 15px;
+	}
+	// .slider-person__wrapper
+	&__wrapper {}
+	// .slider-person__slide
+	&__slide {
+		cursor: grab;
+	}
+	// .slider-person__actions
+	&__actions {
+		margin-top: 32px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 16px;
+	}
+	// .slider-person__button-prev
+	&__button-prev {}
+	// .slider-person__button-next
+	&__button-next {}
+}
+.slide-person {
+	// .slide-person__image
+	&__image {
+		img {
+			object-fit: cover;
+			aspect-ratio: 143/185;
 		}
 	}
 }
@@ -87,6 +232,7 @@
 	@include adaptiveValue("margin-bottom", 135, 40);
 	// .additional__container
 	&__container {
+		max-width: 854px;
 		>* {
 			&:not(:last-child) {
 				@include adaptiveValue("margin-bottom", 64, 30);
