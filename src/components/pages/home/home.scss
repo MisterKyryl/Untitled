@@ -29,7 +29,7 @@
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		min-height: 100svh;
+		min-height: 100vh;
 		@include adaptiveValue("padding-top", 144, 100);
 		@include adaptiveValue("padding-bottom", 112, 60);
 		@include adaptiveValue("gap", 50, 32);
