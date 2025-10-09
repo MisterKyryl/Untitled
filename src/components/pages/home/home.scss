@@ -112,12 +112,9 @@
 			border-radius: 50%;
 			border: 140px solid rgba(255, 233, 34, 0.9);
 			filter: blur(148px);
+			transform: translate3d(0, 0, 0);
 			-ms-filter: blur(148px);
 			-webkit-filter: blur(148px);
-			-webkit-backface-visibility: hidden;
-			-moz-backface-visibility: hidden;
-			-webkit-transform: translate3d(0, 0, 0);
-			-moz-transform: translate3d(0, 0, 0);
 			-moz-filter: blur(148px);
 			-o-filter: blur(148px);
 			@media (max-width:toEm($tablet)) {
