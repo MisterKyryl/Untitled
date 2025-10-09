@@ -106,12 +106,9 @@ textarea.input {
   border-radius: 50%;
   border: 8.75rem solid rgba(255, 233, 34, 0.9);
   filter: blur(9.25rem);
+  transform: translate3d(0, 0, 0);
   -ms-filter: blur(9.25rem);
   -webkit-filter: blur(9.25rem);
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
   -moz-filter: blur(9.25rem);
   -o-filter: blur(9.25rem);
 }
