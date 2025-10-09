@@ -43,7 +43,6 @@
 		color: $lightYellowColor;
 		text-shadow: 0 4px 57.5px rgba(255, 243, 133, 0.6);
 		opacity: 0;
-		transition: opacity .6s, translate .6s;
 		translate: 0 40px;
 		@include adaptiveValue("font-size", 30, 24);
 		@media (max-width:toEm($tablet)) {
@@ -52,6 +51,7 @@
 		[data-fls-loaded] &.--watcher-view {
 			opacity: 1;
 			translate: 0 0;
+			transition: opacity .6s, translate .6s;
 		}
 	}
 	// .hero__text
@@ -115,6 +115,9 @@
 			-ms-filter: blur(148px);
 			-webkit-filter: blur(148px);
 			-webkit-backface-visibility: hidden;
+			-moz-backface-visibility: hidden;
+			-webkit-transform: translate3d(0, 0, 0);
+			-moz-transform: translate3d(0, 0, 0);
 			-moz-filter: blur(148px);
 			-o-filter: blur(148px);
 			@media (max-width:toEm($tablet)) {
