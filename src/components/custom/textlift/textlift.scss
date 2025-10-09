@@ -1,0 +1,14 @@
+.textlift {
+	display: inline-flex;
+	overflow: hidden;
+}
+.textlift__animation {
+	display: inline-flex;
+	white-space: normal;
+	word-break: break-word;
+	transform: translateY(100%);
+	transition: transform .6s ease-in-out;
+}
+[data-fls-loaded] .--watcher-view .textlift__animation {
+	transform: translateY(0);
+}

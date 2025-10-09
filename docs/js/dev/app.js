@@ -27,6 +27,28 @@
     fetch(link.href, fetchOpts);
   }
 })();
+document.querySelectorAll("[data-fls-textlift]").forEach((dataTextElement) => {
+  const textContent = dataTextElement.textContent.trim();
+  const splitByLetter = dataTextElement.hasAttribute("data-fls-text-every");
+  const initialDelay = parseFloat(dataTextElement.getAttribute("data-fls-text-delay")) || 0;
+  dataTextElement.innerHTML = "";
+  const parts = splitByLetter ? textContent.split("") : textContent.split(" ");
+  parts.forEach((part) => {
+    const textBody = document.createElement("span");
+    textBody.classList.add("textlift");
+    const textAnimation = document.createElement("span");
+    textAnimation.classList.add("textlift__animation");
+    textAnimation.innerHTML = part === " " ? "&nbsp;" : part;
+    textBody.appendChild(textAnimation);
+    dataTextElement.appendChild(textBody);
+    if (!splitByLetter) dataTextElement.appendChild(document.createTextNode(" "));
+  });
+  const animatedSpans = dataTextElement.querySelectorAll(".textlift .textlift__animation");
+  animatedSpans.forEach((span, index) => {
+    const delay = initialDelay + 0.02 * index;
+    span.style.transitionDelay = `${delay}s`;
+  });
+});
 function isObject$1(obj) {
   return obj !== null && typeof obj === "object" && "constructor" in obj && obj.constructor === Object;
 }
@@ -124,7 +146,7 @@ const ssrWindow = {
     back() {
     }
   },
-  CustomEvent: function CustomEvent() {
+  CustomEvent: function CustomEvent2() {
     return this;
   },
   addEventListener() {
@@ -4467,6 +4489,15 @@ function initSliders() {
   }
 }
 document.querySelector("[data-fls-slider]") ? window.addEventListener("load", initSliders) : null;
+function addLoadedAttr() {
+  if (!document.documentElement.hasAttribute("data-fls-preloader-loading")) {
+    window.addEventListener("load", function() {
+      setTimeout(function() {
+        document.documentElement.setAttribute("data-fls-loaded", "");
+      }, 0);
+    });
+  }
+}
 function getHash() {
   if (location.hash) {
     return location.hash.replace("#", "");
@@ -4511,6 +4542,12 @@ let bodyLock = (delay = 500) => {
     }, delay);
   }
 };
+function getDigFormat(item, sepp = " ") {
+  return item.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, `$1${sepp}`);
+}
+function uniqArray(array) {
+  return array.filter((item, index, self) => self.indexOf(item) === index);
+}
 const gotoBlock = (targetBlock, noHeader = false, speed = 500, offsetTop = 0) => {
   const targetBlockElement = document.querySelector(targetBlock);
   if (targetBlockElement) {
@@ -4553,6 +4590,125 @@ function menuInit() {
   });
 }
 document.querySelector("[data-fls-menu]") ? window.addEventListener("load", menuInit) : null;
+class ScrollWatcher {
+  constructor(props) {
+    let defaultConfig = {
+      logging: true
+    };
+    this.config = Object.assign(defaultConfig, props);
+    this.observer;
+    !document.documentElement.hasAttribute("data-fls-watch") ? this.scrollWatcherRun() : null;
+  }
+  // Оновлюємо конструктор
+  scrollWatcherUpdate() {
+    this.scrollWatcherRun();
+  }
+  // Запускаємо конструктор
+  scrollWatcherRun() {
+    document.documentElement.setAttribute("data-fls-watch", "");
+    this.scrollWatcherConstructor(document.querySelectorAll("[data-fls-watcher]"));
+  }
+  // Конструктор спостерігачів
+  scrollWatcherConstructor(items) {
+    if (items.length) {
+      let uniqParams = uniqArray(Array.from(items).map(function(item) {
+        if (item.dataset.flsWatcher === "navigator" && !item.dataset.flsWatcherThreshold) {
+          let valueOfThreshold;
+          if (item.clientHeight > 2) {
+            valueOfThreshold = window.innerHeight / 2 / (item.clientHeight - 1);
+            if (valueOfThreshold > 1) {
+              valueOfThreshold = 1;
+            }
+          } else {
+            valueOfThreshold = 1;
+          }
+          item.setAttribute(
+            "data-fls-watcher-threshold",
+            valueOfThreshold.toFixed(2)
+          );
+        }
+        return `${item.dataset.flsWatcherRoot ? item.dataset.flsWatcherRoot : null}|${item.dataset.flsWatcherMargin ? item.dataset.flsWatcherMargin : "0px"}|${item.dataset.flsWatcherThreshold ? item.dataset.flsWatcherThreshold : 0}`;
+      }));
+      uniqParams.forEach((uniqParam) => {
+        let uniqParamArray = uniqParam.split("|");
+        let paramsWatch = {
+          root: uniqParamArray[0],
+          margin: uniqParamArray[1],
+          threshold: uniqParamArray[2]
+        };
+        let groupItems = Array.from(items).filter(function(item) {
+          let watchRoot = item.dataset.flsWatcherRoot ? item.dataset.flsWatcherRoot : null;
+          let watchMargin = item.dataset.flsWatcherMargin ? item.dataset.flsWatcherMargin : "0px";
+          let watchThreshold = item.dataset.flsWatcherThreshold ? item.dataset.flsWatcherThreshold : 0;
+          if (String(watchRoot) === paramsWatch.root && String(watchMargin) === paramsWatch.margin && String(watchThreshold) === paramsWatch.threshold) {
+            return item;
+          }
+        });
+        let configWatcher = this.getScrollWatcherConfig(paramsWatch);
+        this.scrollWatcherInit(groupItems, configWatcher);
+      });
+    }
+  }
+  // Функція створення налаштувань
+  getScrollWatcherConfig(paramsWatch) {
+    let configWatcher = {};
+    if (document.querySelector(paramsWatch.root)) {
+      configWatcher.root = document.querySelector(paramsWatch.root);
+    } else if (paramsWatch.root !== "null") ;
+    configWatcher.rootMargin = paramsWatch.margin;
+    if (paramsWatch.margin.indexOf("px") < 0 && paramsWatch.margin.indexOf("%") < 0) {
+      return;
+    }
+    if (paramsWatch.threshold === "prx") {
+      paramsWatch.threshold = [];
+      for (let i = 0; i <= 1; i += 5e-3) {
+        paramsWatch.threshold.push(i);
+      }
+    } else {
+      paramsWatch.threshold = paramsWatch.threshold.split(",");
+    }
+    configWatcher.threshold = paramsWatch.threshold;
+    return configWatcher;
+  }
+  // Функція створення нового спостерігача зі своїми налаштуваннями
+  scrollWatcherCreate(configWatcher) {
+    this.observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        this.scrollWatcherCallback(entry, observer);
+      });
+    }, configWatcher);
+  }
+  // Функція ініціалізації спостерігача зі своїми налаштуваннями
+  scrollWatcherInit(items, configWatcher) {
+    this.scrollWatcherCreate(configWatcher);
+    items.forEach((item) => this.observer.observe(item));
+  }
+  // Функція обробки базових дій точок спрацьовування
+  scrollWatcherIntersecting(entry, targetElement) {
+    if (entry.isIntersecting) {
+      !targetElement.classList.contains("--watcher-view") ? targetElement.classList.add("--watcher-view") : null;
+    } else {
+      targetElement.classList.contains("--watcher-view") ? targetElement.classList.remove("--watcher-view") : null;
+    }
+  }
+  // Функція відключення стеження за об'єктом
+  scrollWatcherOff(targetElement, observer) {
+    observer.unobserve(targetElement);
+  }
+  // Функція обробки спостереження
+  scrollWatcherCallback(entry, observer) {
+    const targetElement = entry.target;
+    this.scrollWatcherIntersecting(entry, targetElement);
+    targetElement.hasAttribute("data-fls-watcher-once") && entry.isIntersecting ? this.scrollWatcherOff(targetElement, observer) : null;
+    document.dispatchEvent(new CustomEvent("watcherCallback", {
+      detail: {
+        entry
+      }
+    }));
+  }
+}
+document.querySelector("[data-fls-watcher]") ? window.addEventListener("load", () => new ScrollWatcher({})) : null;
+addLoadedAttr();
 window.addEventListener("scroll", function() {
   const header = document.querySelector(".header");
   if (window.scrollY > 0) {
@@ -4562,7 +4718,8 @@ window.addEventListener("scroll", function() {
   }
 });
 export {
-  getHash as a,
+  gotoBlock as a,
   bodyUnlock as b,
-  gotoBlock as g
+  getHash as c,
+  getDigFormat as g
 };

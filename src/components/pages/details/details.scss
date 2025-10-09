@@ -123,6 +123,7 @@
 	}
 	// .body-details__name
 	&__name {
+		font-weight: 600;
 		font-family: $fontUnbounded;
 		text-align: center;
 		color: $lightYellowColor;
@@ -146,7 +147,7 @@
 	&__list {
 		>* {
 			&:not(:last-child) {
-				margin-bottom: 27px;
+				@include adaptiveValue("margin-bottom", 27, 20);
 			}
 		}
 	}
@@ -163,7 +164,8 @@
 			top: 2px;
 			left: 0;
 			aspect-ratio: 25/23;
-			@include sprite('stars');
+			background-color: $lightYellowColor;
+			@include sprite('stars', $mode: 'mask');
 			@include adaptiveValue("width", 25, 20);
 		}
 	}
