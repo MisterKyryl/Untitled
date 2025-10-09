@@ -114,6 +114,9 @@
 			filter: blur(148px);
 			-ms-filter: blur(148px);
 			-webkit-filter: blur(148px);
+			-webkit-backface-visibility: hidden;
+			-moz-filter: blur(148px);
+			-o-filter: blur(148px);
 			@media (max-width:toEm($tablet)) {
 				aspect-ratio: 1;
 				width: auto;

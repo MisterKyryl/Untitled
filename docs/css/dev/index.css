@@ -108,6 +108,9 @@ textarea.input {
   filter: blur(9.25rem);
   -ms-filter: blur(9.25rem);
   -webkit-filter: blur(9.25rem);
+  -webkit-backface-visibility: hidden;
+  -moz-filter: blur(9.25rem);
+  -o-filter: blur(9.25rem);
 }
 .hero__circle::after {
   content: "";
