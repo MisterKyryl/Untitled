@@ -22,9 +22,9 @@
 .hero {
 	position: relative;
 	overflow: hidden;
-	// background: linear-gradient(180deg,
-	// 		rgba(0, 0, 0, 1) 62.98%,
-	// 		rgba(0, 0, 0, 0) 100%);
+	background: linear-gradient(180deg,
+			rgba(0, 0, 0, 1) 62.98%,
+			rgba(0, 0, 0, 0) 100%);
 	// .hero__container
 	&__container {
 		z-index: 1;
@@ -95,17 +95,11 @@
 		height: 100%;
 		top: 0;
 		left: 0;
-		img {
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			top: 0;
-			left: 0;
-			object-fit: cover;
-		}
+		mask-image: linear-gradient(to bottom, white 50%, transparent 100%);
+		-webkit-mask-image: linear-gradient(to bottom, white 50%, transparent 100%);
+		mask-mode: luminance;
 	}
 	// .hero__circle
-	/* 
 	&__circle {
 		position: absolute;
 		width: 100%;
@@ -117,11 +111,11 @@
 			position: absolute;
 			width: 107.19%;
 			height: 155.07%;
-			top: 44.6%;
+			top: 25%;
 			left: 50%;
 			translate: -50% 0;
 			border-radius: 50%;
-			border: 140px solid rgba(255, 233, 34, 0.9);
+			border: 140px solid rgba(255, 233, 34, 0.8);
 			filter: blur(148px);
 			transform: translate3d(0, 0, 0);
 			-ms-filter: blur(148px);
@@ -131,7 +125,7 @@
 			@media (max-width:toEm($tablet)) {
 				aspect-ratio: 1;
 				width: auto;
-				top: 50%;
+				// top: 50%;
 			}
 			@media (max-width:toEm($mobileSmall)) {}
 		}
@@ -154,7 +148,6 @@
 			@media (max-width:toEm($mobileSmall)) {}
 		}
 	}
-	*/
 }
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
 .about {
